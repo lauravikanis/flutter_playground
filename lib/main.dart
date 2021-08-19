@@ -10,8 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Startup Name Generator',
       theme: ThemeData(
-        primaryColor: Colors.blueGrey,
-      ),
+          primaryColor: Colors.blueGrey, backgroundColor: Colors.pink),
       home: RandomWords(),
     );
   }
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
 
 class _RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
-  final _biggerFont = const TextStyle(fontSize: 18.0);
+  final _biggerFont = const TextStyle(fontSize: 20.0);
   final _saved = <WordPair>{};
   // final _customStyle = const TextStyle(backgroundColor: Colors.yellow);
   void _pushSaved() {
@@ -69,7 +68,7 @@ class _RandomWordsState extends State<RandomWords> {
       title: Text(pair.asPascalCase, style: _biggerFont),
       trailing: Icon(
         alreadySaved ? Icons.favorite : Icons.favorite_border,
-        color: alreadySaved ? Colors.red : null,
+        color: alreadySaved ? Colors.pinkAccent : Colors.pink,
       ),
       onTap: () {
         setState(() {
